@@ -14,4 +14,11 @@ const initSlider = ($ele) => {
     const toggleClass = (condition, elem, className) => {
         condition ? elem.classList.add(className) : elem.classList.remove(className);
     };
+
+    const handlePrevNextBtn = () => {
+        toggleClass(currentSlide == 0, prev, "disabled");
+        toggleClass(currentSlide == items.length -1, next, "disabled");
+    }
+
+    handlePrevNextBtn();
 };
