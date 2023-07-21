@@ -21,4 +21,19 @@ const initSlider = ($ele) => {
     }
 
     handlePrevNextBtn();
+
+    const handleSlide = (condition, slideElem, event) => {
+        var slideTransformValue = slideElem.style.transform;
+        var translateXValue = slideTransformValue.replace(/[^/d.]/g, "");
+        if(condition && event == "next") {
+            currentSlide += 1;
+            slideElem.style.transform = `translateX(-${+translateXValue + itemWidth}px)`;
+        } else if(condition && event == "prev") {
+            currentSlide -= 1;
+            slideElem.style.transform = `translateX(-${+translateXValue - itemWidth}px)`;
+        }
+
+        items.forEach((e) => e.classList.remove("activeSlide"));
+        items[currentSlide].classList.add("activeSlide");
+    };
 };
