@@ -15,5 +15,23 @@ const initSlider = ($ele) => {
     sliderContainer.style.width = items.length * itemWidth + "px";
     slide.style.transform = "translateY(0px)";
 
-    const toggleClass = (condition, elem, className);
+    const toggleClass = (condition, elem, className) => {
+       condition ? elem.classList.add(className) : elem.classList.remove(className);
+    };
+
+    const handlePrevNextBtn = () => {
+        toggleClass(currentSlide == 0, prev, "disabled");
+        toggleClass(currentSlide == items.length -1, next, "disabled");
+    };
+
+    handlePrevNextBtn();
+
+    const handleSlide = (condition, slideElem, event) => {
+        var slideTransformValue = slideElem.style.transform;
+        var translateXValue = slideTransformValue.replace(/[^\d.]/g, "");
+    }
+    
+    if(condition && event == "next") {
+        currentSlide += 1;
+    }
 };
