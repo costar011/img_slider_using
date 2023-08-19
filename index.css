@@ -43,4 +43,19 @@ body {
 
 .nextBtn, .prevBtn {
     position: absolute;
+    width: 50px;
+    height: 50px;
+    z-index: 100;
+    opacity: 1;
+
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    background: rgba(255, 255, 255, 0.234);
+    backdrop-filter: blur(5px);
+    color: white;
+    border-radius: 10px;
+    transition: all .4s;
 }
