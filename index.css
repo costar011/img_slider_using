@@ -64,3 +64,14 @@ body {
     bottom: 10px;
     right: 10px;
 }
+
+.prevBtn {
+    bottom: 10px;
+    right: 70px;
+    transform: rotate(180deg);
+}
+
+.nextBtn.disabled, .prevBtn.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}

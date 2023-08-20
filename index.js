@@ -33,5 +33,6 @@ const initSlider = ($ele) => {
     
     if(condition && event == "next") {
         currentSlide += 1;
+        slideElem.style.transform
     }
 };
