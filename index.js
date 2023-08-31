@@ -33,6 +33,22 @@ const initSlider = ($ele) => {
     
     if(condition && event == "next") {
         currentSlide += 1;
-        slideElem.style.transform
+        slideElem.style.transform = `translateX(-${+translateXValue + itemWidth}px)`;
+    } else if (condition && event == "prev") {
+        currentSlide -=  1;
+        slideElem.style.transform = `translateX(-${+translateXValue - itemWidth}px)`;   
     }
+    items.forEach((e)=> e.classList.remove("activeSlide"));
+    items[currentSlide].classList.add("activeSlide");
+
+next.addEventListener("click", () => {
+    handleSlide(currentSlide != items.length -1, slide, "next"); handlePrevNextBtn();
+});
+
+prev.addEventListener("click", () => {
+    handleSlide(currentSlide != 0, slide, "prev"); handlePrevNextBtn();
+});
+
 };
+
+initSlider("sliderContainer");
